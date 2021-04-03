@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+// Color Pallet
+$color-white: #f5f5f5;
+$color-white-border: #5f5f5f;
+$color-black: #151515;
+$color-grey-darkest: #1e1e1e;
+$color-grey-dark: #282828;
+$color-grey-medium: #525252;
+$color-grey-light: #777777;
+$color-grey-lightest: #9d9d9d;
+$color-red: #e82e06;
+$color-green: #17ac56;
+$color-blue: #1777f2;
+
+// Typography
+$font-body: 'Modern Era', sans-serif;
+$font-header: 'Druk Wide Web', 'Arial Black', sans-serif;
+$base-font-size: 16px;
+
+// Spacing & Sizes
+$site-width: 1636px;
+$grid-gap: 20px;
+
+// Breakpoints
+$breakpoint-largest: 90em; // 1440px
+$breakpoint-large: 64em; // 1024px
+$breakpoint-medium: 52.5em; // 840px
+$breakpoint-smallish: 46.25em; // 740px
+$breakpoint-small: 30em; // 480px

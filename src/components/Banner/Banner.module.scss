@@ -1,0 +1,16 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+
+.banner {
+    @media only screen and (max-width: $breakpoint-medium) {
+        margin-top: 30px
+    }
+    z-index: 1000;
+    position: sticky;
+    top: 85px;
+    padding: rem(12px);
+    text-align: center;
+    background-color: $color-green;
+    margin-bottom: 40px;
+}

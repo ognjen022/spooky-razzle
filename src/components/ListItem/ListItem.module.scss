@@ -1,0 +1,89 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+
+.list-item {
+
+  p,
+  ul,
+  ol {
+    font-size: rem(23px) !important;
+    line-height: 1.4;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(16px);
+    }
+
+    &.large {
+      font-size: rem(31px);
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(23px);
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  border-top: 0.5px solid $color-white-border;
+  margin-bottom: 60px;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  div {
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__number {
+    grid-column-end: span 2;
+    margin-top: 25px;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-bottom: 20px;
+      flex:.1;
+    }
+  }
+
+  &__short-text {
+    grid-column-end: span 4;
+    font-weight: 500;
+    max-width: 300px;
+    margin-top: 25px;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex: .9;
+      margin-bottom: 20px;
+    }
+
+    p {
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(23px);
+      }
+    }
+  }
+
+  &__long-text {
+    grid-column-end: span 6;
+    font-weight: 100;
+    margin-top: 25px;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-basis: 100%;
+      margin-top: 0;
+    }
+  }
+}

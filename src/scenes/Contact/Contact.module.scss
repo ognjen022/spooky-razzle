@@ -1,0 +1,97 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.contact-container {
+  display: flex;
+  max-width: 100%;
+  margin-top:100px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    flex-direction: column;
+  }
+}
+
+.contact {
+  padding: 0 30px;
+  width: 40%;
+  border-right: 1px solid $color-white-border;
+  border-left: 1px solid $color-white-border;
+  @media only screen and (max-width: $breakpoint-medium) {
+    width: initial;
+    padding: 0;
+    border-bottom: 1px solid $color-white-border;
+    border-top: 1px solid $color-white-border;
+    border-right: none;
+    border-left: none;
+    padding: 30px;
+  }
+  h1 {
+    border-bottom: 1px solid $color-white-border;
+    padding-bottom: 20px;
+    margin: none;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  &__link {
+    border-bottom: 0.5px solid white;
+  }
+}
+
+.contact-form {
+  display: flex;
+  padding: 30px;
+  padding-top: 20px;
+  width: 60%;
+  border-right: 1px solid $color-white-border;
+  @media only screen and (max-width: $breakpoint-medium) {
+    width: initial;
+    flex-direction: column;
+    border-right: none;
+    padding: 30px;
+  }
+  &__input-column {
+    flex: 1;
+    > label {
+      font-size: 1em;
+    }
+  }
+  &__message {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 30px;
+    textarea {
+      border: none;
+      background-color: #1e1e1e;
+      resize: none;
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: initial;
+      margin-left: 0;
+    }
+  }
+  &__button-container {
+    margin-left: auto;
+    margin-top: 10px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin: 0;
+    }
+  }
+  &__button {
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+  span[role='alert'] {
+    top: calc(100% + 7px);
+    left: 0;
+    color: #ff4d4d;
+    font-size: 0.75rem;
+  }
+}

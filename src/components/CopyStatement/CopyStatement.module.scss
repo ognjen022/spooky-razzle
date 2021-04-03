@@ -1,0 +1,66 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Copy Statement
+   ========================================================================== */
+
+.copy-statement {
+  border-top: 0.5px solid $color-white-border;
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 30px;
+    border-top: 0.5px solid $color-white-border;
+    border-bottom: 0.5px solid $color-white-border;
+  }
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: block;
+  }
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding-top: 30px;
+  }
+  &__image {
+    grid-column-end: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 0.5px solid $color-white-border;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+    }
+  }
+  &__text {
+    grid-column-end: span 9;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 60px;
+    border-left: 0.5px solid $color-white-border;
+    border-right: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+    h2 {
+      font-size: rem(45px);
+      letter-spacing: -0.68px;
+      line-height: 1;
+      margin: 0;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(30px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(26px);
+      }
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(15px);
+      }
+    }
+  }
+}

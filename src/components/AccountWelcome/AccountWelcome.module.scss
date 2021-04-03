@@ -1,0 +1,41 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+  Account Welcome
+  ========================================================================== */
+
+.account-welcome {
+  @media only screen and (max-width: $breakpoint-smallish) {
+    padding: 30px;
+    border-top: 0.5px solid $color-white-border;
+  }
+  &__text {
+    padding: 30px;
+    border-right: 0.5px solid $color-white-border;
+    border-left: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-right: 0;
+      border-left: 0;
+    }
+    h2 {
+      font-size: rem(45px);
+      letter-spacing: -0.68px;
+      line-height: 1;
+      margin: 0;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(30px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(26px);
+      }
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(15px);
+      }
+    }
+  }
+}

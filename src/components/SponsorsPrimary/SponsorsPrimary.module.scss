@@ -1,0 +1,152 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Sponsors
+   ========================================================================== */
+
+.sponsors {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+  border-top: 0.5px solid $color-white-border;
+  @media only screen and (max-width: $breakpoint-smallish) {
+    display: block;
+    border-top: 0;
+  }
+  @media only screen and (max-width: $breakpoint-smallish) {
+    padding: 30px;
+  }
+  &__group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      flex-direction: column;
+    }
+  }
+  &__label {
+    display: flex;
+    min-height: 120px;
+    justify-content: flex-end;
+    p {
+      writing-mode: vertical-rl;
+      font-size: rem(12px);
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+    }
+  }
+  &__title {
+    width: 12%;
+    padding: 20px;
+    border-left: 0.5px solid $color-white-border;
+    justify-content: flex-start;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 20%;
+      min-height: unset;
+      border-left: 0;
+      border-bottom: 0;
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      width: 100%;
+      border-bottom: 0.5px solid $color-white-border;
+    }
+    p {
+      @media only screen and (max-width: $breakpoint-smallish) {
+        writing-mode: unset;
+      }
+    }
+  }
+  &__item {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    border-left: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      border-left: 0;
+      border-bottom: 0.5px solid $color-white-border;
+    }
+    &:last-child {
+      border-right: 0.5px solid $color-white-border;
+      @media only screen and (max-width: $breakpoint-smallish) {
+        border-right: 0;
+      }
+    }
+  }
+  &__logo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      border-right: 0.5px solid $color-white-border;
+    }
+
+    img {
+      height: 60px;
+      object-fit: contain;
+      margin-top: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// Secondary sponsors
+.sponsors--secondary {
+  .sponsors__group {
+    @media only screen and (max-width: $breakpoint-smallish) {
+      position: relative;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &:after {
+      @media only screen and (max-width: $breakpoint-smallish) {
+        content: '';
+        left: 0;
+        width: 100%;
+        height: 0.5px;
+        bottom: 0px;
+        position: absolute;
+        background: $color-white;
+      }
+    }
+  }
+  .sponsors__item {
+    @media only screen and (max-width: $breakpoint-smallish) {
+      width: 50%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-right: auto;
+    }
+    &:nth-child(even) {
+      .sponsors__logo {
+        @media only screen and (max-width: $breakpoint-smallish) {
+          border-right: 0;
+        }
+      }
+    }
+  }
+  .sponsors__label {
+    @media only screen and (max-width: $breakpoint-smallish) {
+      display: none;
+    }
+  }
+  .sponsors__title {
+    @media only screen and (max-width: $breakpoint-smallish) {
+      display: block;
+    }
+  }
+  .sponsors__logo {
+    @media only screen and (max-width: $breakpoint-smallish) {
+      width: 100%;
+    }
+    img {
+      @media only screen and (max-width: $breakpoint-smallish) {
+        width: 60%;
+        margin-left: auto;
+      }
+    }
+  }
+}

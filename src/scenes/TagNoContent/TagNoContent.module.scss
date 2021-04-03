@@ -1,0 +1,83 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Tag No Content
+   ========================================================================== */
+
+.error-image {
+  margin-bottom: 30px;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.error-content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  padding-bottom: 60px;
+  border-bottom: 0.5px solid $color-white-border;
+  @media only screen and (max-width: $breakpoint-large) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  &__number {
+    grid-column-end: span 3;
+    font-weight: 900;
+    font-size: rem(15px);
+    @media only screen and (max-width: $breakpoint-large) {
+      grid-column-end: span 6;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__label {
+    grid-column-start: 4;
+    grid-column-end: span 9;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: rem(15px);
+    @media only screen and (max-width: $breakpoint-large) {
+      grid-column-end: span 6;
+      grid-column-start: auto;
+      text-align: right;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__button-container {
+    grid-column-end: span 3;
+    @media only screen and (max-width: $breakpoint-large) {
+      grid-column-end: span 12;
+      order: 4;
+      margin-top: 10px;
+    }
+  }
+  &__text {
+    grid-column-start: 4;
+    grid-column-end: span 9;
+    @media only screen and (max-width: $breakpoint-large) {
+      grid-column-start: auto;
+      grid-column-end: span 12;
+    }
+    h1 {
+      font-size: rem(35px);
+      line-height: 1;
+      margin: 0;
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(13px);
+        line-height: 1.2;
+      }
+    }
+  }
+  &__button {
+    @media only screen and (max-width: $breakpoint-large) {
+      width: 100%;
+    }
+  }
+}

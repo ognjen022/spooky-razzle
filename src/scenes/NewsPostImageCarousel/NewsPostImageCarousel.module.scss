@@ -1,0 +1,159 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   News Post Image Carousel
+   ========================================================================== */
+
+.news-post-image-carousel {
+  border-right: 0.5px solid $color-white-border;
+  position: relative;
+  @media only screen and (max-width: $breakpoint-medium) {
+    border-right: none;
+    border-bottom: 0.5px solid $color-white-border;
+  }
+  &__slide {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: block;
+    }
+  }
+  &__image {
+    width: 75%;
+    position: relative;
+    border-left: 0.5px solid $color-white-border;
+    border-right: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+      border-left: none;
+      border-right: none;
+      border-top: 0.5px solid $color-white-border;
+      border-bottom: 0.5px solid $color-white-border;
+    }
+    &:after {
+      content: '';
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba($color-grey-dark, 0.5) 0, rgba($color-grey-dark, 0) 40%),
+        linear-gradient(180deg, rgba($color-grey-dark, 0) 80%, rgba($color-grey-dark, 0.5) 100%);
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__content {
+    position: relative;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__image-credit {
+    @media only screen and (max-width: $breakpoint-medium) {
+      position: absolute;
+      top: -40px;
+    }
+    p {
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        letter-spacing: 2px;
+      }
+    }
+  }
+  &__caption {
+    p {
+      display: block;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      max-inline-size: 440px;
+      @media only screen and (max-width: $breakpoint-largest) {
+        max-inline-size: 400px;
+      }
+      @media only screen and (max-width: $breakpoint-large) {
+        max-inline-size: 300px;
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        max-inline-size: unset;
+      }
+    }
+  }
+  .glide {
+    &__slides {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    &__slide {
+      position: relative;
+      overflow: hidden;
+    }
+    &__arrows {
+      width: 140px;
+      position: absolute;
+      right: -10px;
+      bottom: 20px;
+      text-align: center;
+      @media only screen and (max-width: $breakpoint-medium) {
+        position: static;
+      }
+    }
+    &__button-prev,
+    &__button-next {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: transparent;
+      font-size: rem(28px);
+      border: none;
+      width: 1.5em;
+      height: 1.5em;
+      padding: 0;
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(20px);
+        position: absolute;
+        top: 40%;
+      }
+      @media only screen and (max-width: $breakpoint-smallish) {
+        top: 30%;
+      }
+    }
+    &__button-prev {
+      margin-right: 15px;
+      @media only screen and (max-width: $breakpoint-medium) {
+        left: 10px;
+        margin-right: 0;
+      }
+    }
+    &__button-next {
+      @media only screen and (max-width: $breakpoint-medium) {
+        right: 10px;
+      }
+    }
+    img {
+      display: block;
+    }
+  }
+}

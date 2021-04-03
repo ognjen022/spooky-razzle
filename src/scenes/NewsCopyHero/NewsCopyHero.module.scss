@@ -1,0 +1,95 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   News Copy Hero
+   ========================================================================== */
+
+.news-copy-hero {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: block;
+  }
+  &__item-first {
+    grid-column-end: span 5;
+    position: relative;
+    height: auto;
+    border-left: 0.5px solid $color-white-border;
+    padding: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-left: 0;
+      border-top: 0.5px solid $color-white-border;
+      &:last-child {
+        border-bottom: 0.5px solid $color-white-border;
+      }
+    }
+  }
+  &__item-second {
+    grid-column-end: span 7;
+    position: relative;
+    height: auto;
+    border-left: 0.5px solid $color-white-border;
+    border-right: 0.5px solid $color-white-border;
+    padding: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-left: 0;
+      border-top: 0.5px solid $color-white-border;
+      &:last-child {
+        border-bottom: 0.5px solid $color-white-border;
+      }
+    }
+  }
+  &__date {
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__news-tags {
+    position: absolute;
+    bottom: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__news-tags-item {
+    display: inline-block;
+    &:not(:last-child) {
+      &:after {
+        content: ',';
+      }
+    }
+  }
+  h2 {
+    font-size: rem(35px);
+    line-height: 1;
+    margin-bottom: 16px;
+    @media only screen and (max-width: $breakpoint-largest) {
+      font-size: rem(30px);
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(22px);
+    }
+  }
+  p {
+    font-size: rem(18px);
+    margin-bottom: 50px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(12px);
+      margin-bottom: 30px;
+    }
+  }
+}

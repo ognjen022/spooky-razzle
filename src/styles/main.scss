@@ -1,0 +1,16 @@
+@import 'globals/functions';
+@import 'globals/variables';
+
+// Base
+@import 'globals/fonts';
+@import 'globals/base';
+
+// Shared
+@import 'shared/utilities';
+@import 'shared/forms';
+
+//Carousels
+@import 'shared/carousels';
+
+//Carousels
+@import 'shared/player';

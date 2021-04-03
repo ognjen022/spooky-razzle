@@ -1,0 +1,111 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Modal Popup
+   ========================================================================== */
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    z-index: 5000;
+  }
+  &__background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgba($color-black, 0.9);
+    @media only screen and (max-width: $breakpoint-medium) {
+      background-color: $color-black;
+    }
+  }
+  &__inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    background-color: rgba(21, 21, 21, 0.9);
+    flex-direction: column;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @media only screen and (max-width: $breakpoint-medium) {
+      background-color: $color-black;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+  &__content {
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+    }
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+    align-content: center;
+    display: grid;
+
+    &--sm {
+      width: 25%;
+    }
+
+    &--md {
+      width: 45%;
+    }
+
+    &--lg {
+      width: 60%;
+    } 
+  }
+  &__close-button {
+    position: fixed;
+    z-index: 9999;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    background: $color-black;
+    border: 0;
+    padding: 0;
+    color: $color-white;
+    font-size: rem(30px);
+    line-height: 0;
+    border-radius: 50%;
+    &:hover,
+    &:focus {
+      background: transparent;
+      filter: brightness(90%);
+      backdrop-filter: blur(10px);
+      outline: none;
+    }
+    &:active {
+      filter: brightness(85%);
+    }
+    .icon {
+      display: block;
+    }
+  }
+}

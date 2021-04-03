@@ -1,0 +1,63 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Ticker
+   ========================================================================== */
+
+.ticker {
+  border-top: 0.5px solid $color-white-border;
+  border-bottom: 0.5px solid $color-white-border;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  &__content {
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: hidden;
+    position: relative;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &:before {
+      content: '';
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(100deg, $color-black 0%, $color-black 2%, rgba($color-black, 0) 15%),
+        linear-gradient(100deg, rgba($color-black, 0) 85%, $color-black 98%, $color-black 100%);
+      z-index: 99;
+    }
+    &:after {
+      content: '';
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-left: 0.5px solid $color-white-border;
+      border-right: 0.5px solid $color-white-border;
+      z-index: 99;
+      @media only screen and (max-width: $breakpoint-medium) {
+        display: none;
+      }
+    }
+  }
+  &__text-group {
+    white-space: nowrap;
+    font-family: $font-header;
+    font-size: rem(30px);
+    text-transform: uppercase;
+    letter-spacing: -0.45px;
+    padding: 0 25vw;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(22px);
+    }
+  }
+}

@@ -1,0 +1,210 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Verses
+   ========================================================================== */
+
+.verses {
+  position: relative;
+  border-top: 0.5px solid $color-white-border;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .glide & {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__inner {
+    border-left: 0.5px solid $color-white-border;
+    border-right: 0.5px solid $color-white-border;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    grid-gap: 40px;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: block;
+      border-left: none;
+      border-right: none;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .glide & {
+      border-left: none;
+      border-right: none;
+    }
+  }
+  &__team {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-template-columns: 70px 1fr;
+      grid-gap: 20px;
+    }
+    &:last-child {
+      .verses__team-name {
+        order: 2;
+      }
+    }
+  }
+  &__team-name {
+    text-transform: uppercase;
+    font-size: rem(20px);
+    font-family: $font-header;
+    text-align: center;
+    line-height: 1.2;
+    @media only screen and (max-width: $breakpoint-medium) {
+      order: 2;
+      font-size: rem(18px);
+      text-align: left;
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(14px);
+    }
+  }
+  &__team-logo {
+    width: 110px;
+    min-width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 0.75px solid $color-white-border;
+    overflow: hidden;
+    @media only screen and (max-width: $breakpoint-large) {
+      width: 90px;
+      min-width: 90px;
+      height: 90px;
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      min-width: 70px;
+      width: 70px;
+      height: 70px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__middle {
+    position: relative;
+    text-align: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      &:before {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: $color-white;
+        position: absolute;
+        left: -30px;
+        right: -30px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    .glide & {
+      @media only screen and (max-width: $breakpoint-medium) {
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+    }
+  }
+  &__middle-inner {
+    position: relative;
+    display: inline-block;
+    background-color: $color-black;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &__vs {
+    text-transform: uppercase;
+    font-size: rem(40px);
+    font-family: $font-header;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(26px);
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(14px);
+    }
+  }
+  &__date-time {
+    text-transform: uppercase;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    line-height: 1.2;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(14px);
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(10px);
+    }
+  }
+}
+
+.verses-carousel {
+  position: relative;
+  border-top: 0.5px solid $color-white-border;
+  padding-top: 60px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid $color-white-border;
+  }
+  .glide {
+    position: relative;
+    &__arrows {
+      position: static;
+    }
+    &__button-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(12px);
+        left: 25px;
+      }
+    }
+    &__button-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(12px);
+        right: 25px;
+      }
+    }
+  }
+}
+
+.verses-title {
+  display: none;
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: block;
+    padding: 30px;
+    border-top: 0.5px solid $color-white-border;
+  }
+  h2 {
+    display: block;
+    margin: 0;
+    line-height: 1;
+    font-size: 1.125rem;
+  }
+}

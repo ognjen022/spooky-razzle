@@ -1,0 +1,201 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Inline post
+   ========================================================================== */
+.inline-post-new {
+  
+  p {
+    margin: 0;
+    font-size: rem(23px);
+    font-weight: 500;
+
+  }
+  border-top: 0.5px solid $color-white-border;
+  &__header {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    position: relative;
+    padding-right: 40px;
+    cursor: pointer;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 30px;
+      padding-right: 50px;
+    }
+  }
+  &__header:hover {
+    color: $color-grey-lightest;
+  }
+  &__icon {
+    height: rem(25px);
+  }
+  &__content {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
+    &.is-active {
+      height: auto;
+      visibility: visible;
+      .inline-post-new__content-inner {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+  &__content-inner {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    opacity: 0;
+    padding-right: 40px;
+    color: $color-grey-medium!important;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    p {
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(18px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(16px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(12px);
+      }
+    }
+  }
+  &__button {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: rem(30px);
+    width: 1em;
+    height: 1em;
+    outline: none;
+    transform: rotate(45deg);
+    @media only screen and (max-width: $breakpoint-medium) {
+      right: 15px;
+      top:-15px;
+      .icon {
+        display: block;
+        height: rem(25px);
+      }
+    }
+    &:hover,
+    &:focus {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(85%);
+    }
+    &.is-active {
+      
+    transform: rotate(0deg);
+    }
+    .icon {
+      display: block;
+    }
+  }
+}
+.inline-post {
+  border-top: 0.5px solid $color-white-border;
+  &__header {
+    padding-top: 26px;
+    padding-bottom: 30px;
+    position: relative;
+    padding-right: 40px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 30px;
+      padding-right: 50px;
+    }
+    h2 {
+      font-size: rem(45px);
+      margin: 0;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(30px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(26px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(13px);
+      }
+    }
+  }
+  &__content {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
+    &.is-active {
+      height: auto;
+      visibility: visible;
+      .inline-post__content-inner {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+  &__content-inner {
+    border-top: 0.5px solid $color-white-border;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    opacity: 0;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    p {
+      font-size: rem(21px);
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(18px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(16px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(12px);
+      }
+    }
+  }
+  &__button {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: rem(30px);
+    width: 1em;
+    height: 1em;
+    outline: none;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(12px);
+      right: 30px;
+    }
+    &:hover,
+    &:focus {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(85%);
+    }
+    &.is-active {
+      transform: rotate(180deg);
+    }
+    .icon {
+      display: block;
+    }
+  }
+}

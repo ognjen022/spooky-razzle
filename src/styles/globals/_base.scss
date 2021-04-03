@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+input,
+select,
+textarea {
+  color: $color-white;
+  font-size: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-black;
+  font-size: rem(15px);
+  font-family: $font-body;
+  line-height: 1.45;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-header;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 1em 0;
+}
+
+p,
+.p,
+ul,
+ol {
+  font-size: rem(15px);
+  margin: 0 0 1em 0;
+}
+
+small {
+  font-size: rem(10px);
+}
+
+a {
+  color: $color-white;
+  text-decoration: none;
+  text-underline-position: under;
+  &:hover {
+    color: rgba($color-white, 0.8);
+    outline: none;
+  }
+  &:focus {
+    color: rgba($color-white, 0.8);
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 0.5px solid $color-white-border;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0;
+  @media only screen and (max-width: $breakpoint-smallish) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media only screen and (max-width: $breakpoint-large) {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  font-size: rem(12px);
+  th,
+  td {
+    padding: 7px 10px;
+  }
+  th {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: $color-grey-darkest;
+      }
+    }
+  }
+}
+
+iframe {
+  display: block;
+  border: none;
+}
+
+/* ==========================================================================
+   Glide Global Overrides
+   ========================================================================== */
+
+.glide {
+  position: static;
+  @media only screen and (max-width: $breakpoint-medium) {
+    position: relative;
+  }
+  &__slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__slide {
+    height: auto;
+    img {
+      display: block;
+    }
+  }
+  &__arrows {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-gap: 20px;
+    pointer-events: none;
+    @media only screen and (max-width: $breakpoint-medium) {
+      position: static;
+      display: block;
+    }
+  }
+  &__button-prev,
+  &__button-next {
+    pointer-events: all;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    border: 0;
+    font-size: rem(28px);
+    padding: 10px;
+    transition: all 0.25s ease-in-out;
+    @media only screen and (max-width: $breakpoint-largest) {
+      font-size: rem(20px);
+      padding: 0;
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      height: 1em;
+      width: 1em;
+    }
+    &:hover,
+    &:focus {
+      outline: none;
+      filter: brightness(80%);
+    }
+    .icon {
+      display: block;
+    }
+  }
+  &__button-prev {
+    @media only screen and (max-width: $breakpoint-medium) {
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  &__button-next {
+    @media only screen and (max-width: $breakpoint-medium) {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}

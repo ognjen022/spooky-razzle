@@ -1,0 +1,339 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Account
+   ========================================================================== */
+
+.container {
+  @media only screen and (max-width: $breakpoint-largest) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.account {
+  display: flex;
+  overflow: hidden;
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: block;
+  }
+  button {
+    @media only screen and (max-width: $breakpoint-smallish) {
+      width: 100%;
+    }
+  }
+  label {
+    white-space: nowrap;
+    @media only screen and (max-width: $breakpoint-medium) {
+      white-space: normal;
+    }
+  }
+  &__title {
+    position: relative;
+    border: 0;
+    border-right: 0.5px solid $color-white-border;
+    padding: 30px;
+    cursor: pointer;
+    text-align: left;
+    background-color: transparent;
+    color: $color-white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: all 0.25s ease-in-out;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-right: none;
+      border-bottom: 0.5px solid $color-white-border;
+      width: 100%;
+    }
+    &.is-active {
+      .account__title-arrow {
+        transform: rotate(180deg);
+      }
+    }
+    &:hover,
+    &:focus {
+      color: rgba($color-white, 0.8);
+      outline: none;
+    }
+    &:first-child {
+      border-left: 0.5px solid $color-white-border;
+      @media only screen and (max-width: $breakpoint-medium) {
+        border-left: none;
+        border-top: 0.5px solid $color-white-border;
+      }
+    }
+    span {
+      display: block;
+      margin: 0;
+      font-family: $font-header;
+      writing-mode: vertical-rl;
+      font-size: rem(37px);
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(28px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(13px);
+        white-space: normal;
+      }
+    }
+  }
+  &__title-arrow {
+    display: none;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: block;
+      position: absolute;
+      right: 30px;
+      top: 0;
+      bottom: 0;
+      font-size: rem(12px);
+      height: 1em;
+      width: 1em;
+      margin: auto;
+    }
+  }
+  &__content {
+    width: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    @media only screen and (max-width: $breakpoint-large) {
+      transition: all 0.25s ease-in-out;
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: auto;
+      height: 0;
+    }
+    &.is-active {
+      width: 100%;
+      border-right: 0.5px solid $color-white-border;
+      @media only screen and (max-width: $breakpoint-medium) {
+        border-right: none;
+        border-bottom: 0.5px solid $color-white-border;
+        height: auto;
+        width: auto;
+      }
+      .account__content-inner {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        transition-delay: 0.15s;
+        white-space: normal;
+      }
+    }
+  }
+  &__content-inner {
+    opacity: 0;
+    transition: none;
+    padding: 30px;
+    white-space: nowrap;
+    height: 750px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      white-space: normal;
+      height: initial;
+    }
+  }
+
+  &__name-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-bottom: 30px;
+    }
+    .profile-badge {
+      margin: 0 20px 0 0;
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.5px solid $color-white;
+      text-decoration: none;
+      &__initials {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        font-weight: 700;
+        margin-left: 3px;
+        margin-top: 2px;
+      }
+    }
+  }
+  &__name {
+    margin: 0;
+    font-size: rem(20px);
+    white-space: nowrap;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(16px);
+      white-space: normal;
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(13px);
+    }
+  }
+  &__subscriptions-details-container {
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-top: 0;
+    }
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -20px;
+    align-items: center;
+  }
+  &__subscriptions-details-tab-link {
+    text-transform: uppercase;
+    font-size: rem(12px);
+    letter-spacing: 3px;
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    color: $color-white;
+    opacity: 0.5;
+  }
+  .is-active {
+    opacity: 1;
+  }
+
+  &__form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    border-top: 0.5px solid $color-white-border;
+    border-bottom: 0.5px solid $color-white-border;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border: none;
+      padding: 0;
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      display: block;
+    }
+  }
+  &__form-group {
+    &--inline {
+      display: flex;
+      @media only screen and (max-width: $breakpoint-medium) {
+        display: block;
+      }
+      p {
+        &:not(:last-child) {
+          margin-right: 30px;
+          @media only screen and (max-width: $breakpoint-medium) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &__form-group-button {
+    grid-column-end: span 2;
+    margin-top: 20px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &__stripe-info {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    font-size: rem(12px);
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    @media only screen and (max-width: $breakpoint-medium) {
+      position: static;
+      margin-top: 30px;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+      white-space: normal;
+    }
+  }
+}
+
+.account-details {
+  display: flex;
+  position: relative;
+  border-top: 0.5px solid $color-white-border;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    border: none;
+    padding: 0;
+    display: block;
+  }
+  &:last-child {
+    border-bottom: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border: none;
+    }
+  }
+  &__title {
+    margin-right: 90px;
+    h3 {
+      font-family: $font-body;
+      font-weight: 400;
+      display: block;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+        white-space: normal;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      justify-content: space-between;
+    }
+    p {
+      white-space: nowrap;
+      line-height: 1.6;
+      @media only screen and (max-width: $breakpoint-medium) {
+        white-space: normal;
+      }
+      &:not(:last-child) {
+        margin-right: 110px;
+        @media only screen and (max-width: $breakpoint-smallish) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  &__edit-button {
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    transition: all 0.25s ease-in-out;
+    @media only screen and (max-width: $breakpoint-medium) {
+      top: 0;
+      width: auto !important;
+    }
+    &:hover,
+    &:focus {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(85%);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   News Post Copy Block
+   ========================================================================== */
+
+.news-post-copy-block {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  &__content {
+    grid-column-start: 3;
+    grid-column-end: span 10;
+    @media only screen and (max-width: $breakpoint-large) {
+      grid-column-start: 1;
+      grid-column-end: span 12;
+    }
+    p {
+      font-size: rem(18px);
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(16px);
+      }
+    }
+  }
+}

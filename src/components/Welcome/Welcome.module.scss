@@ -1,0 +1,46 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Welcome Page
+   ========================================================================== */
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @media only screen and (max-width: $breakpoint-largest) {
+    margin-top: 10vh;
+    padding: 0 5.5%;
+  }
+
+  &__heading {
+    font-size: rem(22px);
+    font-weight: 500;
+    margin-bottom: 60px;
+    @media only screen and (max-width: $breakpoint-largest) {
+      font-size: rem(20px);
+    }
+  }
+  &__body {
+    font-size: rem(35px);
+    font-weight: 100;
+    @media only screen and (max-width: $breakpoint-largest) {
+      font-size: rem(25px);
+    }
+  }
+  &__actions {
+    display: flex;
+    flex-direction: column;
+
+    align-self: center;
+
+    > button {
+      flex: 1;
+    }
+    > button:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

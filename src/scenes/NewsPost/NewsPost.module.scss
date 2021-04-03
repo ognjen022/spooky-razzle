@@ -1,0 +1,182 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   News Post
+   ========================================================================== */
+
+.news-post {
+  &__image {
+    margin-bottom: 60px;
+    position: relative;
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-bottom: 0;
+    }
+    &:after {
+      content: '';
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba($color-grey-dark, 0.5) 0, rgba($color-grey-dark, 0) 40%),
+        linear-gradient(180deg, rgba($color-grey-dark, 0) 80%, rgba($color-grey-dark, 0.5) 100%);
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__group {
+    position: relative;
+    // border-top: 0.5px solid $color-white-border;
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 20px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding: 30px;
+      grid-column-gap: 10px;
+      grid-template-columns: 1fr 140px;
+      grid-template-areas:
+        'social social'
+        'tags date'
+        'title title'
+        'teams teams'
+        'content content';
+    }
+  }
+  &__date {
+    grid-column-end: span 3;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-area: date;
+      text-align: right;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__news-tags {
+    grid-column-end: span 7;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-area: tags;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__news-tags-item {
+    display: inline-block;
+    &:not(:last-child) {
+      &:after {
+        content: ',';
+      }
+    }
+  }
+  &__socials {
+    grid-column-end: span 2;
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-area: social;
+      position: absolute;
+      top: -80px;
+      left: 0;
+    }
+  }
+  &__social-link {
+    font-size: rem(30px);
+    text-decoration: none;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    .icon {
+      display: block;
+    }
+  }
+  &__title {
+    grid-column-end: span 9;
+    margin-top: 100px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-area: title;
+      margin-top: 25px;
+    }
+    h2 {
+      font-size: rem(45px);
+      line-height: 1;
+      margin-bottom: 0.5em;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(36px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(22px);
+      }
+    }
+  }
+  &__content {
+    grid-column-start: 4;
+    grid-column-end: span 9;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-area: content;
+    }
+    p {
+      font-size: rem(18px);
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(16px);
+      }
+    }
+  }
+  &__teams {
+    grid-column-end: span 3;
+    margin-top: 100px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-area: teams;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 0.5px solid $color-white-border;
+      border-bottom: 0.5px solid $color-white-border;
+    }
+  }
+  &__teams-item {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      margin-bottom: -15px;
+      position: relative;
+    }
+  }
+  &__teams-image {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 0.75px solid $color-white;
+    overflow: hidden;
+    margin-right: 20px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 42px;
+      min-width: 42px;
+      height: 42px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__teams-name {
+    font-size: rem(15px);
+  }
+}

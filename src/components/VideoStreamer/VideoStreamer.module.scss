@@ -1,0 +1,381 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Video Streamer
+   ========================================================================== */
+
+.video-streamer {
+  position: relative;
+  background-color: $color-grey-medium;
+  overflow: hidden;
+}
+
+.video-streamer-arrow-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  position: relative;
+  margin-top: 25%;
+}
+
+.streamer-icon {
+  display: inline-block;
+  width: 2em;
+  height: 3em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.video-streamer-arrow-icon-right {
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+.video-streamer-arrow-icon-left {
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.video-streamer-content, 
+.video-streamer-wrapper  {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-left: 0.5px solid $color-grey-dark;
+  border-right: 0.5px solid $color-grey-dark;
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    order: 2;
+    margin-top: 20px;
+    border-left: none;
+    border-right: none;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  h2 {
+    font-size: rem(22px);
+    width: 70%;
+    line-height: 1;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 70%;
+      margin-top: 30px;
+    }
+  }
+  p {
+    font-size: rem(15px);
+    width: 60%;
+    margin-top: -10px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+      margin-top: 0px;
+      font-size: rem(13px);
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .video-streamer-teams-vs-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    //margin-bottom: 20px;
+    border-left: .5px solid $color-grey-dark;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      order: 2;
+      padding-left: 10px;
+      padding-right: 0;
+      border-left: .5px solid $color-white-border;
+    }
+    > div {
+      display: inline;
+     
+      
+    }
+    .inner-wrapper {
+      @media only screen and (max-width: $breakpoint-medium) {
+        border-bottom: none
+      }
+      
+    }
+    .video-stream-teams-vs-header {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: absolute;
+      margin-top: -5px;
+      
+      @media only screen and (max-width: $breakpoint-medium) {
+        position: relative;
+      }
+    }
+    .video-streamer-teams-vs-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      font-size: rem(12px);
+      margin: 20px 0 50px;
+      @media only screen and (max-width: $breakpoint-medium) {
+        flex-direction: row;
+        align-self: flex-start;
+        width: 100%;
+        border-top: 0.5px solid $color-white-border;
+        border-bottom: 0.5px solid $color-white-border;
+        margin-top: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      &__images {
+        display: flex;
+      }
+      &__image {
+        width: 41px;
+        height: 41px;
+        border-radius: 100%;
+        border: 0.75px solid $color-white-border;
+        overflow: hidden;
+        background-color: $color-black;
+        @media only screen and (min-width: $breakpoint-medium) {
+          width: 58px;
+          height: 58px;
+        }
+        &:last-child {
+          margin-left: -10px;
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__names {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        line-height: 1.2;
+        @media only screen and (min-width: $breakpoint-medium) {
+          font-size: rem(15px);
+        }
+        span {
+          text-align: left;
+        }
+        &:not(:last-child) {
+          margin-bottom: -10px;
+        }
+      }
+      &__versus-span {
+        font-style: italic;
+        font-weight: bold;
+      }
+      &__actions {
+        > p:nth-child(1) {
+          color: $color-grey-light
+        }
+        button {
+          
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        button {
+          @media only screen and (max-width: $breakpoint-medium) {
+            margin-bottom: 20px;
+          }
+        }
+
+        &--offset {
+          margin-top: 150px;
+        }
+      }
+    }
+    .video-streamer-socials-wrapper-mobile {
+      margin-top: 20px;
+      @media only screen and (min-width: $breakpoint-medium) {
+        display: none;
+      }
+      .video-streamer-social-nav {
+        &__list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          font-size: rem(22px);
+        }
+        &__list-item {
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          border: 0.5px solid $color-white;
+          border-radius: 50%;
+          line-height: 1;
+          margin-right: 5px;
+          @media only screen and (max-width: $breakpoint-medium) {
+            display: inline-block;
+          }
+        }
+        &__link {
+          display: table-cell;
+          width: 36px;
+          height: 36px;
+          vertical-align: middle;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .video-streamer__tractrac-feed {
+    position: absolute;
+    bottom: 0;
+    span {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      display: block;
+    }
+    & ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      & li { 
+        cursor: pointer;
+      }
+    }
+  }
+  .video-streamer__tractrac-wrapper {
+    display: block;
+  }
+  .video-streamer__details {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: 0.5px solid $color-grey-dark;
+    & button[class*="Button_button__"] {
+      margin: 10px 0px;
+    }
+    & p {
+      margin-top: 150px;
+      @media only screen and (max-width: $breakpoint-medium) {
+        position: relative;
+        display: flex;
+        margin-top: unset;
+      }
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-left: 1px solid $color-white-border;
+      padding-left: 10px;
+      padding-right: 0;
+      margin-bottom: 2em;
+    }
+    .video-streamer__details-name {
+      display: inline-block;
+      margin-top: 35px;
+      @media only screen and (max-width: $breakpoint-medium) {
+       margin-top: 0;
+      }
+    }
+    .video-stream__details-wrapper {
+      position: relative;
+      display: block;
+      top: -5px;
+      width: 100%;
+      margin-bottom: rem(2px);
+    }
+    .video-streamer__actions {
+      position: absolute;
+      top: 0; 
+      
+      @media only screen and (max-width: $breakpoint-medium) {
+        position: relative;
+        margin-bottom: 4em;
+      }
+      & :not(:last-child) {
+        margin-right: 1.3em;
+        
+        @media only screen and (max-width: $breakpoint-medium) {
+          margin-right: 0;
+        }
+      }
+    }
+    .video-streamer__save-indicator,
+    .video-streamer__tractrac {
+      position: relative;
+      top: 0px;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      float: left;
+      @media only screen and (max-width: $breakpoint-medium) {
+        position: relative;
+        text-transform: uppercase;
+        display: block;
+      }
+    }
+    .video-streamer__date-label {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      @media only screen and (max-width: $breakpoint-medium) {
+        left: 0;
+        position: relative;
+      }
+      span {
+        display: inline-block;
+        margin: 0;
+        font-size: rem(15px);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        @media only screen and (max-width: $breakpoint-medium) {
+          writing-mode: initial;
+          font-size: rem(10px);
+          letter-spacing: 2px;
+        }
+      }
+    }
+    .video-streamer-socials-wrapper {
+      position: absolute;
+      right: 20px;
+      top: 45px;
+      @media only screen and (max-width: $breakpoint-medium) {
+        display: none;
+      }
+      .video-streamer-social-nav {
+        &__list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          font-size: rem(22px);
+        }
+        &__list-item {
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          border: 0.5px solid $color-white;
+          border-radius: 50%;
+          line-height: 1;
+          margin-right: 5px;
+          @media only screen and (max-width: $breakpoint-medium) {
+            display: inline-block;
+          }
+        }
+        &__link {
+          display: table-cell;
+          width: 36px;
+          height: 36px;
+          vertical-align: middle;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

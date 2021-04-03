@@ -1,0 +1,62 @@
+/* ==========================================================================
+     THEO Video Player re-skin 
+     ========================================================================== */
+
+
+.spooky-player button.theo-primary-color.vjs-big-play-button {
+    color: transparent;
+    width: 3em;
+
+}
+
+.spooky-player .theo-tertiary-color.theo-control-bar-shadow {
+    color: transparent
+}
+
+.spooky-player .theo-primary-color.vjs-play-progress.vjs-slider-bar.vjs-keep-tooltips-inside,
+.spooky-player .theo-primary-color.vjs-volume-level {
+    color: #fff;
+}
+
+.spooky-player .spooky-spinner {
+    animation: spin 2500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.theo-primary-background.theo-menu-header {
+    color: #000;
+    background-color: #fff;
+}
+
+.theo-primary-color.theo-settings-control-menu-item-value, 
+.theo-primary-color.theo-settings-control-menu-item-value > *,
+.theo-menu-item.vjs-menu-item,
+.theo-menu-item.vjs-menu-item > span {
+    color: #fff;
+}
+// .vjs-loading-spinner {
+//     left: 43%;
+//     top:43%;
+// }
+
+
+// @media only screen and (max-width: $breakpoint-smallish) {
+//     .vjs-loading-spinner  {
+//       top: 30%;
+//     }
+  
+//     .spooky-player .spooky-spinner {
+//       height: 3.75em;
+//       width: 3.75em;
+//     }
+//   }
+  
+
+.theoplayer-skin.vjs-seeking .vjs-loading-spinner, 
+.theoplayer-skin.vjs-waiting .vjs-loading-spinner {
+    animation: unset;
+    -webkit-animation: unset;
+    -moz-animation: unset;
+}

@@ -1,0 +1,69 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Terms Of Service
+   ========================================================================== */
+
+.blog-post {
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &__image {
+    margin-bottom: 60px;
+    @media only screen and (max-width: $breakpoint-large) {
+      margin-bottom: 30px;
+    }
+  }
+  &__title {
+    display: flex;
+    border-bottom: 0.5px solid $color-white-border;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    @media only screen and (max-width: $breakpoint-large) {
+      display: block;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: rem(45px);
+      line-height: 1;
+      flex: 1;
+      margin: 0;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(38px);
+        margin-bottom: 0.5em;
+      }
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(18px);
+        line-height: 1.2;
+      }
+    }
+  }
+  &__date {
+    display: block;
+    width: 200px;
+    text-align: right;
+    font-size: rem(15px);
+    font-weight: 500;
+    letter-spacing: 3px;
+    @media only screen and (max-width: $breakpoint-large) {
+      text-align: left;
+      width: auto;
+    }
+  }
+  &__content {
+    p,
+    ul,
+    ol {
+      font-size: rem(21px);
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(18px);
+      }
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(15px);
+      }
+    }
+  }
+}

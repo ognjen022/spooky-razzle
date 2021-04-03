@@ -1,0 +1,225 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+
+/* ==========================================================================
+   Video Player
+   ========================================================================== */
+
+.fade-in {
+  opacity: 1;
+  animation: fadein 1s;
+}
+
+.fade-out {
+  opacity: 0;
+  animation: fadeout 1s;
+}
+
+.video-player {
+  position: absolute;
+  background-color: #151515;
+  overflow: hidden;
+  display: contents;
+  width: 100%;
+  height: 100%;
+}
+
+.video-player__logo {
+  right: 60px;
+  float: right;
+  top: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+@media only screen and (max-width: $breakpoint-smallish) {
+  .video-player__logo {
+    display: none;
+  }
+}
+
+
+.video-player__logo__icon {
+  height: 10rem;
+  width: 5.175rem;
+}
+
+.video-player__controls-button-group__icon {
+  height: 1.375rem;
+  width: 1.375rem;
+}
+
+.video-player__loader {
+  z-index: 10;
+  display: grid;
+  justify-items: center;
+  grid-gap: 10px;
+  width: 100%;
+  position: absolute;
+  top: 35%;
+}
+
+@media only screen and (max-width: $breakpoint-large) {
+  .video-player__spinner {
+    height: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-smallish) {
+  .video-player__loader {
+    top: 30%;
+  }
+
+  .video-player__spinner,
+  .video-player__big-play {
+    height: 3.75rem;
+    width: 3.75rem;
+  }
+}
+
+.video-player__spinner {
+  animation: spin 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.video-player__controls {
+  z-index: 10;
+  position: absolute;
+  bottom: 1.375rem;
+  left: 3.25rem;
+  right: 3.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: $breakpoint-large) {
+  .video-player__controls {
+    bottom: 0.875rem;
+    left: 2.25rem;
+    right: 2.25rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-smallish) {
+  .video-player__controls {
+    bottom: 0.375rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+.video-player__controls-button-group {
+  display: flex;
+}
+
+.video-player__controls-button-group :not(:last-child) {
+  margin-right: .35rem;
+}
+
+.video-player__controls-button {
+  display: block;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  color: #F5F5F5;
+  line-height: 1;
+  border-radius: 50%;
+}
+
+.video-player__controls-progress {
+  z-index: 10003;
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: $breakpoint-smallish) {
+  .video-player__controls-progress {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.video-player__controls-progress:hover .video-player__controls-progress__bar {
+  cursor: pointer;
+  height: 4px;
+}
+
+.video-player__controls-progress__bar {
+  background-color: #F5F5F5;
+  height: 2px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.video-player__controls-progress__indicator {
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+.video-player__controls-counter-time {
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  font-size: 1rem;
+  color: #F5F5F5;
+  line-height: 1;
+  border-radius: 50%;
+  padding: 0px 20px;
+}
+
+@media only screen and (max-width: $breakpoint-smallish) {
+  .video-player__controls-counter-time {
+    font-size: .875rem;
+    padding: 2px 7.5px
+  }
+}
+
+
+.video-player__controls-volume-slider {
+  z-index: 10;
+  max-height: 500px;
+  height: 100px;
+  position: absolute;
+  margin-bottom: .875rem;
+}
+
+.video-player__controls-volume-slider:hover .video-player__controls-volume-slider__bar {
+  cursor: pointer;
+}
+
+.video-player__controls-volume-slider__bar {
+  background-color: #F5F5F5;
+  width: 2px;
+  border-radius: 2px;
+  height: 100%;
+}
+
+.video-player__controls-volume-slider__indicator {
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+  position: absolute;
+  left: -0.3rem;
+  top: 0;
+  margin: auto;
+}

@@ -1,0 +1,323 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Teams Hero
+   ========================================================================== */
+
+.tag-hero {
+  border-left: 0.5px solid $color-white-border;
+  border-right: 0.5px solid $color-white-border;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    flex-direction: column;
+    border: none;
+  }
+  button {
+    width: 100%;
+    @media only screen and (min-width: $breakpoint-large + 1) {
+      width: 472px;
+    }
+  }
+
+  &__content {
+    grid-column-end: span 6;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 30px 10px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column-end: span 8;
+      padding: 30px 30px 30px 0;
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      padding-right: 30px;
+    }
+    h2 {
+      font-size: rem(25px);
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(13px);
+      }
+    }
+    p {
+      font-size: rem(15px);
+      @media only screen and (max-width: $breakpoint-medium) {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__content-footer {
+    margin-top: auto;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    > p {
+      > button {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__image {
+    grid-column-end: span 3;
+    position: relative;
+    border-left: 0.5px solid $color-white-border;
+    border-right: 0.5px solid $color-white-border;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column-end: span 4;
+      border: none;
+      align-items: flex-start;
+      padding-right: 0;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__label {
+    padding: 30px 0 30px 30px;
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column-end: span 12;
+      justify-content: flex-start;
+      padding: 0 30px 20px 30px;
+      border-bottom: 0.5px solid $color-white-border;
+    }
+    span {
+      display: block;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        letter-spacing: 2px;
+      }
+    }
+  }
+  &__secondary-actions {
+    grid-column-end: span 2;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 30px 30px 30px 0;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+    }
+    :last-child {
+      margin-top: auto;
+    }
+    &--wrapper {
+      margin-left: auto;
+    }
+    &--social-link {
+      text-decoration: none;
+      font-size: rem(22px);
+      margin-left: 6px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    &--save {
+      margin-left: auto;
+    }
+  }
+
+  &__secondary-actions-mobile {
+    padding: 30px;
+    border-top: 0.5px solid $color-white-border;
+    border-bottom: 0.5px solid $color-white-border;
+    display: none;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: block;
+    }
+    &--footer {
+      display: block;
+      width: 100%;
+      button {
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+    &--wrapper {
+      display: flex;
+    }
+    &--save {
+      margin-top: 20px;
+      padding: 0px 15px 0px 15px;
+      input[type='checkbox'],
+      input[type='radio'] {
+        position: absolute;
+      }
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__purchase-options {
+    grid-column-end: span 12;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 5px 30px 5px;
+    &--save {
+      display: none;
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding: 5px 0 5px 0;
+      &--save {
+        display: block;
+        margin-top: 20px;
+        padding: 0px 15px 0px 15px;
+        input[type='checkbox'],
+        input[type='radio'] {
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  &__purchase-options-header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 30px;
+    border-bottom: 0.5px solid $color-white-border;
+    padding: 15px;
+  }
+
+  &__purchase-options-title {
+    grid-column: span 10;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column: span 6;
+    }
+  }
+
+  &__purchase-options-toggle {
+    grid-column: span 2;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column: span 6;
+    }
+    text-align: end;
+    > button {
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      display: inline-flex;
+      outline: none;
+      box-shadow: none;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      color: $color-green;
+      &:hover,
+      &:focus {
+        filter: brightness(90%);
+      }
+      &:active {
+        filter: brightness(85%);
+      }
+      > .icon {
+        width: 2em;
+        height: 2em;
+        transform: rotate(45deg);
+      }
+
+      > .icon.is-active {
+        transform: rotate(0deg);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        right: 30px;
+      }
+      &:hover,
+      &:focus {
+        filter: brightness(90%);
+      }
+      &:active {
+        filter: brightness(85%);
+      }
+      &.is-active {
+        transform: rotate(0deg);
+      }
+      .icon {
+        display: block;
+      }
+    }
+  }
+  &__purchase-options-actions {
+    margin-top: 5em;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    grid-column-gap: row;
+    border-bottom: 0.5px solid $color-white-border;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding: 0px 15px 0 15px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      > p:first-child {
+        margin-top: 5em;
+      }
+      > p:last-child {
+        flex-direction: column;
+        > button:not(.solo) {
+          flex: 1;
+        }
+        > button:not(:last-child) {
+          margin-right: 0px !important;
+          margin-bottom: 15px;
+        }
+      }
+    }
+    > p:last-child {
+      text-align: end;
+    }
+    > p:first-child {
+      grid-column: span 4;
+      color: $color-white;
+      @media only screen and (max-width: $breakpoint-largest) {
+        grid-column: span 5;
+      }
+    }
+    > p:last-child {
+      grid-column: 7 / span 7;
+      display: flex;
+      @media only screen and (max-width: $breakpoint-largest) {
+        grid-column: 6 / span 8;
+      }
+      > button {
+        flex: 1;
+      }
+      > button:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+    
+    > p.solo {
+      grid-column: 10 / span 7;
+      > button {
+        flex: 1;
+      }
+    }
+  }
+}

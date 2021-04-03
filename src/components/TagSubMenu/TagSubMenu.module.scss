@@ -1,0 +1,92 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Sub Menu
+   ========================================================================== */
+
+.sub-menu {
+  padding-bottom: 40px;
+  border-bottom: solid 0.5px $color-white-border;
+  @media only screen and (max-width: $breakpoint-large) {
+    padding-bottom: 30px;
+    border-bottom: none;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-large) {
+      display: block;
+    }
+  }
+  &__title {
+    display: block;
+    margin: 0;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    @media only screen and (max-width: $breakpoint-medium) {
+      writing-mode: initial;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+
+.sub-menu-nav {
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: $breakpoint-large) {
+    display: block;
+    background-color: $color-black;
+    transition: all 0.25s ease-in-out;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: rem(12px);
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    @media only screen and (max-width: $breakpoint-large) {
+      font-family: $font-header;
+      font-size: rem(21px);
+      letter-spacing: 0;
+    }
+    @media only screen and (max-width: $breakpoint-small) {
+      font-size: rem(18px);
+    }
+    &:not(:last-child) {
+      margin-right: 6vw;
+      @media only screen and (max-width: $breakpoint-large) {
+        margin-right: 0;
+        border-top: 0.5px solid $color-white-border;
+      }
+    }
+  }
+  &__list-item {
+    display: inline-block;
+    @media only screen and (max-width: $breakpoint-large) {
+      display: block;
+      border-bottom: 0.5px solid $color-white-border;
+    }
+    &:not(:last-child) {
+      margin-right: 3vw;
+      @media only screen and (max-width: $breakpoint-large) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    @media only screen and (max-width: $breakpoint-large) {
+      display: block;
+      padding: 30px;
+    }
+  }
+}

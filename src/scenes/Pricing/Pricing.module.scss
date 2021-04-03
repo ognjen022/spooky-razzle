@@ -1,0 +1,42 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 60px;
+  justify-content: center;
+  
+  @media only screen and (max-width: $breakpoint-largest) {
+    > :not(:last-child) {
+      margin-bottom: 20px;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 0 15vw ;
+    > div {
+      flex: 1
+    }
+  }
+  > div {
+    grid-column-end: span 4;
+  }
+}
+
+.page {
+  h2 {
+    text-align: center;
+    text-transform: none;
+    font-weight: normal;
+    margin: 2em 0 2em 0;
+  }
+  @media only screen and (min-width: $breakpoint-large) {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+  @media only screen and (min-width: $breakpoint-largest) {
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+.promo-code {
+  background-color: $color-grey-darkest;
+  display: flex;
+  border-radius: 3px;
+  input {
+    flex: 1;
+  }
+  svg {
+    flex: 0.15;
+    margin-top: 14px;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex: 0.25;
+      margin-top: 20px;
+    }
+  }
+}

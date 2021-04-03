@@ -1,0 +1,115 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Sign up
+   ========================================================================== */
+
+.signup-new {
+  @media only screen and (max-width: $breakpoint-large) {
+    margin-top: 5vh;
+    padding: 0 20px;
+  }
+
+  &__content {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    @media only screen and (max-width: $breakpoint-small) {
+      max-width: unset;
+    }
+  }
+
+  &__form-header {
+    margin-bottom: 30px;
+    text-align: center;
+    h2 {
+      font-family: $font-body;
+      font-weight: 700;
+      font-size: rem(20px);
+      margin: 0;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(18px);
+      }
+    }
+  }
+  &__form-footer {
+    margin-top: 30px;
+    text-align: center;
+    p {
+      text-transform: none;
+      font-size: rem(14px);
+    }
+  }
+
+  &__form-container {
+    background-color: $color-grey-dark;
+    border-radius: 3px;
+    padding: 25px;
+    @media only screen and (max-width: $breakpoint-large) {
+      padding: 20px;
+    }
+  }
+  &__form {
+    p {
+      font-size: 1em;
+      position: relative;
+      margin-bottom: 10px;
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        font-size: rem(12px);
+      }
+
+    }
+    
+    input[aria-invalid='true'] {
+      border: 1px solid $color-red;
+    }
+    span[role='alert'] {
+      color: $color-red;
+      font-size: 1em!important;
+      display: block;
+      margin-top: 5px;
+    }
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  &__action {
+    p {
+      font-size: 1em;
+    }
+  }
+  &__form-join {
+    font-size: 1em;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    label {
+      font-size: 1em!important;
+    }
+  }
+  &__tos-links {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    p {
+      font-size: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  a {
+    color: #ffffff;
+    &:hover,
+    &:focus {
+      color: $color-grey-light;
+    }
+  }
+}

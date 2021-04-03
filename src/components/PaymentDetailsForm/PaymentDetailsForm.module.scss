@@ -1,0 +1,261 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   Account
+   ========================================================================== */
+
+.account {
+  display: flex;
+  overflow: hidden;
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: block;
+  }
+  &__title {
+    border: 0;
+    border-right: 0.5px solid $color-white-border;
+    padding: 30px;
+    cursor: pointer;
+    text-align: left;
+    background-color: transparent;
+    color: $color-white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: all 0.25s ease-in-out;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-right: none;
+      border-bottom: 0.5px solid $color-white-border;
+      width: 100%;
+    }
+    &:hover,
+    &:focus {
+      color: rgba($color-white, 0.8);
+      outline: none;
+    }
+    &:first-child {
+      border-left: 0.5px solid $color-white-border;
+      @media only screen and (max-width: $breakpoint-medium) {
+        border-left: none;
+        border-top: 0.5px solid $color-white-border;
+      }
+    }
+    span {
+      display: block;
+      margin: 0;
+      font-family: $font-header;
+      writing-mode: vertical-rl;
+      font-size: rem(37px);
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(28px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(13px);
+      }
+    }
+  }
+  &__content {
+    width: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    @media only screen and (max-width: $breakpoint-large) {
+      transition: all 0.25s ease-in-out;
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: auto;
+      height: 0;
+    }
+    &.is-active {
+      width: 100%;
+      border-right: 0.5px solid $color-white-border;
+      @media only screen and (max-width: $breakpoint-medium) {
+        border-right: none;
+        border-bottom: 0.5px solid $color-white-border;
+        height: auto;
+        width: auto;
+      }
+      .account__content-inner {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+        transition-delay: 0.15s;
+      }
+    }
+  }
+  &__content-inner {
+    opacity: 0;
+    transition: none;
+    padding: 30px;
+  }
+
+  &__name-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    .profile-badge {
+      margin: 0 20px 0 0;
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.5px solid $color-white-border;
+      text-decoration: none;
+      &__initials {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        font-weight: 700;
+        margin-left: 3px;
+        margin-top: 2px;
+      }
+    }
+  }
+  &__name {
+    margin: 0;
+    font-size: rem(20px);
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(16px);
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(13px);
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    border-top: 0.5px solid $color-white-border;
+    border-bottom: 0.5px solid $color-white-border;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border: none;
+      padding: 0;
+    }
+    @media only screen and (max-width: $breakpoint-smallish) {
+      display: block;
+    }
+  }
+  &__form-group {
+    &--inline {
+      display: flex;
+      @media only screen and (max-width: $breakpoint-medium) {
+        display: block;
+      }
+      p {
+        &:not(:last-child) {
+          margin-right: 30px;
+          @media only screen and (max-width: $breakpoint-medium) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &__form-group-button {
+    grid-column-end: span 2;
+    margin-top: 20px;
+    p {
+      margin-bottom: 0;
+    }
+    .button {
+      @media only screen and (max-width: $breakpoint-smallish) {
+        width: 100%;
+      }
+    }
+  }
+  &__stripe-info {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    font-size: rem(12px);
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+      position: static;
+      margin-top: 30px;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.account-details {
+  display: flex;
+  position: relative;
+  border-top: 0.5px solid $color-white-border;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @media only screen and (max-width: $breakpoint-medium) {
+    border: none;
+    padding: 0;
+    display: block;
+  }
+  &:last-child {
+    border-bottom: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border: none;
+    }
+  }
+  &__title {
+    margin-right: 90px;
+    h3 {
+      font-family: $font-body;
+      font-weight: 400;
+      display: block;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      justify-content: space-between;
+    }
+    p {
+      line-height: 1.6;
+      &:not(:last-child) {
+        margin-right: 110px;
+        @media only screen and (max-width: $breakpoint-smallish) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  &__edit-button {
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    transition: all 0.25s ease-in-out;
+    @media only screen and (max-width: $breakpoint-medium) {
+      top: 0;
+    }
+    &:hover,
+    &:focus {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(85%);
+    }
+  }
+}

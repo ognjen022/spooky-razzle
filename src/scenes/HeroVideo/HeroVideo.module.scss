@@ -1,0 +1,232 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+/* ==========================================================================
+   Hero Video
+   ========================================================================== */
+
+.hero-video {
+  border-left: 0.5px solid $color-white-border;
+  border-right: 0.5px solid $color-white-border;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 120px;
+  min-height: 50vh;
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      order: 3;
+      padding: 30px 0;
+    }
+    h2 {
+      font-size: rem(25px);
+      @media only screen and (max-width: $breakpoint-smallish) {
+        font-size: rem(13px);
+      }
+    }
+    p {
+      font-size: rem(15px);
+    }
+    .button {
+      width: 100%;
+    }
+  }
+  &__content-footer {
+    margin-top: auto;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__image {
+    background-color: $color-grey-medium;
+    position: relative;
+    @media only screen and (max-width: $breakpoint-medium) {
+      order: 2;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__premium {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(10px);
+      letter-spacing: 2px;
+      left: 20px;
+      top: 20px;
+    }
+    .icon {
+      font-size: 2em;
+      margin-right: 10px;
+    }
+  }
+  &__live-indicator {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(10px);
+      letter-spacing: 2px;
+      left: 20px;
+      bottom: 20px;
+    }
+    .icon {
+      font-size: 2em;
+      margin-right: 10px;
+    }
+  }
+  &__date {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      right: 20px;
+      top: 20px;
+    }
+    span {
+      display: block;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        letter-spacing: 2px;
+      }
+    }
+  }
+  &__play-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 1em;
+    width: 1em;
+    font-size: rem(98px);
+    line-height: 1;
+    border-radius: 50%;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(60px);
+    }
+    &:before {
+      content: '';
+      display: block;
+      backdrop-filter: blur(5px);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+      border-radius: 50%;
+    }
+    &:hover,
+    &:focus {
+      background: transparent;
+      &:before {
+        opacity: 1;
+      }
+    }
+    .icon {
+      position: relative;
+    }
+  }
+  &__label {
+    padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: $breakpoint-medium) {
+      justify-content: flex-start;
+      order: 1;
+      padding: 0 0 20px 0;
+    }
+    span {
+      display: block;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: rem(15px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media only screen and (max-width: $breakpoint-medium) {
+        writing-mode: initial;
+        font-size: rem(10px);
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+.teams-vs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  font-size: rem(15px);
+  @media only screen and (max-width: $breakpoint-medium) {
+    border-top: 0.5px solid $color-white-border;
+    padding-top: 30px;
+    margin-top: 20px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: -10px;
+    }
+  }
+  &__image {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 100%;
+    border: 0.75px solid $color-white;
+    overflow: hidden;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.icon {
+  // This style is also in /styles/globals/_base.scss
+  // but we need it here as part of Hero Video too
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}

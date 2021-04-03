@@ -1,0 +1,176 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/functions';
+
+/* ==========================================================================
+   News Large Carousel
+   ========================================================================== */
+
+.news-large-carousel {
+  border-right: 0.5px solid $color-white-border;
+  &__slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+  &__news-tags-mobile {
+    position: absolute;
+    display: none;
+    bottom: 30px;
+    left: 30px;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: block;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__image {
+    position: relative;
+    width: 50%;
+    border-left: 0.5px solid $color-white-border;
+    border-right: 0.5px solid $color-white-border;
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-left: none;
+      border-top: 0.5px solid $color-white-border;
+      border-bottom: 0.5px solid $color-white-border;
+      width: 100%;
+      &:after {
+        content: '';
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba($color-grey-dark, 0.5) 0, rgba($color-grey-dark, 0) 45%),
+          linear-gradient(180deg, rgba($color-grey-dark, 0) 80%, rgba($color-grey-dark, 0.5) 100%);
+      }
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__content {
+    width: 50%;
+    padding: 30px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+    }
+    h2 {
+      font-size: rem(47px);
+      line-height: 1;
+      margin: 0 0 0.5em 0;
+      @media only screen and (max-width: $breakpoint-largest) {
+        font-size: rem(32px);
+      }
+      @media only screen and (max-width: $breakpoint-large) {
+        font-size: rem(24px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(22px);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    p {
+      font-size: rem(18px);
+      max-width: 600px;
+      @media only screen and (max-width: $breakpoint-largest) {
+        font-size: rem(16px);
+      }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: rem(12px);
+      }
+    }
+  }
+  &__date {
+    text-transform: uppercase;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: rem(12px);
+      letter-spacing: 2px;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: 99;
+      margin: 0;
+    }
+  }
+  &__news-tags {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+    font-size: rem(15px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+      font-size: rem(10px);
+      letter-spacing: 2px;
+    }
+  }
+  &__news-tags-item {
+    display: inline-block;
+    &:not(:last-child) {
+      &:after {
+        content: ',';
+      }
+    }
+  }
+  &__play-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 1em;
+    width: 1em;
+    font-size: rem(90px);
+    line-height: 1;
+    border-radius: 50%;
+    @media only screen and (max-width: $breakpoint-smallish) {
+      font-size: rem(75px);
+    }
+    &:before {
+      content: '';
+      display: block;
+      backdrop-filter: blur(5px);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+      border-radius: 50%;
+    }
+    &:hover,
+    &:focus {
+      background: transparent;
+      &:before {
+        opacity: 1;
+      }
+    }
+    svg {
+      position: relative;
+    }
+  }
+}
